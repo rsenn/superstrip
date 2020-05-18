@@ -59,17 +59,18 @@
 #include <elf.h>
 
 #include "skalibs/skalibs.h"
-#include "ulong.h"
-#include "sysdeps.h"
-#include "alloc.h"
-#include "allreadwrite.h"
-#include "bytestr.h"
-#include "fmtscan.h"
-#include "buffer.h"
-#include "strerr2.h"
-#include "stralloc.h"
-#include "djbunix.h"
-#include "random.h"
+//#include "skalibs/ulong.h"
+#include "skalibs/sysdeps.h"
+#include "skalibs/alloc.h"
+#include "skalibs/allreadwrite.h"
+#include "skalibs/bytestr.h"
+#include "skalibs/fmtscan.h"
+#include "skalibs/buffer.h"
+#include "skalibs/strerr2.h"
+#include "skalibs/stralloc.h"
+#include "skalibs/djbunix.h"
+#include "skalibs/random.h"
+#include "seek.h"
 
 #define BUFSIZE 8192
 
