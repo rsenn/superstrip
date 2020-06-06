@@ -1,12 +1,18 @@
-.PHONY: all clean
+.PHONY: all clean install
 
 all: superstrip
 
+
+CFLAGS = -I/usr/local/include/skalibs
+LIBS = -l skarnet -L /usr/lib64/skalibs
 .c.o:
-	gcc -c $< -I /usr/include/skalibs/ 
+	$(CC) $(CFLAGS) -c $< 
 
 superstrip: superstrip.o seek_set.o 
-	gcc -o superstrip $^ -I /usr/include/skalibs/ -l skarnet -L /usr/lib64/skalibs
+	$(CC) -o superstrip $^ $(LIBS)
 
 clean:
-	rm superstrip
+	$(RM) superstrip *.o *~
+
+install:
+	install -m755 superstrip /usr/local/bin
